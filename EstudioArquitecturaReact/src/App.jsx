@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, HashRouter} from 'react-router-dom';
+import { Routes, Route, Navigate, HashRouter} from 'react-router-dom';
 import { HomePage} from './pages/Homes/HomePage';
 import { AdminPage} from './pages/Homes/AdminPage';
 import { NewProjectPage } from './pages/Proyectos/NewProjectPage';
@@ -30,6 +30,7 @@ export function App(){
         <Route path='/estudio/clientes' element={<ClientsPage />}></Route>
         <Route path='/estudio/clientes/:id' element={<OneClient />}></Route>
       </Routes>
+      <Toaster />
     </HashRouter>
 
     // <BrowserRouter>

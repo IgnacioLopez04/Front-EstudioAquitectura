@@ -1,7 +1,7 @@
 import { useEffect, useState} from "react";
 import { useForm } from 'react-hook-form';
 import { getAllClients } from "../../api/clients.api";
-import { createProject, deleteProject, updateProject, getProject, getAllProjects, getImage, getImagesProject, deleteImage} from '../../api/projects.api'
+import { createProject,updateProject, getProject, getImagesProject, deleteImage} from '../../api/projects.api'
 import { toast } from "react-hot-toast";
 
 export function NewProjectPage({cerrarModal, idProject, loadProjects}){
@@ -93,7 +93,7 @@ export function NewProjectPage({cerrarModal, idProject, loadProjects}){
                         <input id='mtros-cubiertos' type='number' placeholder="154" { ... register('metrosCubiertos', {required: true})}></input>
                     </div>
                     <div>
-                        <label htmlFor="mtros-totales">Metros totales</label>
+                        <label htmlFor="mtros-totales">Metros del terreno</label>
                         <input id='mtros-totales' type='number' placeholder="300" { ... register('metrosTotales', {required: true})}></input>
                     </div>
                     <div>

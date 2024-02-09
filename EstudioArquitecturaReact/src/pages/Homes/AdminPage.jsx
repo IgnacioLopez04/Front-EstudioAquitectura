@@ -3,7 +3,7 @@ import { TitlePages } from '../../components/TitlePages';
 import { useEffect, useState} from 'react';
 import { useForm } from 'react-hook-form';
 import './AdminPage.css'
-import { createStudio, getStudio, updateStudio } from '../../api/estudio.api';
+import { createStudio, getStudio } from '../../api/estudio.api';
 import { toast } from 'react-hot-toast';
 
 function DataStudio(){
