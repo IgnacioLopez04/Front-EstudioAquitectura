@@ -15,15 +15,16 @@ export function OneProjectPage(){
 
     useEffect(()=>{
         async function loadProject(){
+            if(location.pathname.includes('inicio')){
+                setUrlInicio(true);
+            }
+            
             const proj = await getProject(params.id);
             setProject(proj.data);
 
             const img = await getImagesProject(params.id);
             setImages(img.data.imagenes);
 
-            if(location.pathname.includes('inicio')){
-                setUrlInicio(true);
-            }
         }
         loadProject();
     }, [])
