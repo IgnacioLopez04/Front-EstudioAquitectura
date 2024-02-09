@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, HashRouter, Link, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, HashRouter} from 'react-router-dom';
 import { HomePage} from './pages/Homes/HomePage';
 import { AdminPage} from './pages/Homes/AdminPage';
 import { NewProjectPage } from './pages/Proyectos/NewProjectPage';
@@ -13,7 +13,7 @@ import { OneProjectPage } from './pages/Proyectos/OneProjectPage';
 export function App(){
   return(
     <HashRouter>
-      <Switch>
+      <Routes>
         <Route path="/" element={<Navigate to="/inicio"/>}/>
         <Route path="/inicio" element={<HomePage />}></Route>
         <Route path="/estudio" element={<AdminPage />}></Route>
@@ -29,7 +29,7 @@ export function App(){
         {/* Clientes */}
         <Route path='/estudio/clientes' element={<ClientsPage />}></Route>
         <Route path='/estudio/clientes/:id' element={<OneClient />}></Route>
-      </Switch>
+      </Routes>
     </HashRouter>
 
     // <BrowserRouter>
