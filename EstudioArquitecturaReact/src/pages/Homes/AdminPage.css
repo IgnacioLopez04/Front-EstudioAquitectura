@@ -1,0 +1,96 @@
+.menu-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 10px;
+    background-color: #CBCBCB;
+}
+
+.title-div{
+    margin: 0px 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.title-name{
+    padding: 2px 30px;
+    border-bottom: 2px solid rgb(122, 121, 121);
+}
+
+.links-menu{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    margin: 0px 10px;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.links-menu a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+
+    padding: 2px;
+}
+
+.links-menu a:hover{
+    border-bottom: 2px solid rgb(122, 121, 121);
+}
+
+.links-menu div{
+    text-align: center;
+
+    margin: 0px 5px;
+    padding: 5px 0px;
+    width: 125px;
+}
+
+.links-menu div:last-child{
+    border: 2px solid rgb(122, 121, 121);
+    border-radius: 10px;
+}
+
+.links-menu div:last-child a:hover{
+    border: none;
+}
+
+.links-menu div:last-child:hover{
+    background-color: rgba(122, 121, 121)
+}
+
+/* Pagina estudio */
+
+.article-admin{
+    margin: 20px;
+
+    display: flex;
+}
+
+.div-title-p{
+    padding: 20px;
+    width: 50%;
+}
+
+.article-admin img{
+    width: 50%;
+    padding: 20px;
+}
+
+/* Scroll */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    margin-block: 2em;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #CDCDCD;
+    border: 2px solid white;
+    border-radius: 15px;
+}

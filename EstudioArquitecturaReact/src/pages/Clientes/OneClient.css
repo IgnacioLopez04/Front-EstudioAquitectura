@@ -1,0 +1,54 @@
+.title-update{
+    margin: 20px;
+    padding: 20px;
+    background-color: #CDCDCD;
+}
+
+.title-nw-pj{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #CDCDCD;
+    margin: 10px 20px;
+}
+
+.py-clients{
+    margin: 0px 20px;
+    padding: 18px;
+    border-top: 2px solid #CDCDCD;
+    background-color: #CDCDCD;
+}
+
+.title-nw-pj button{
+    border: 2px solid rgb(122,121,121);
+    margin-right: 20px;
+}
+
+.pj-name{
+    max-width: 20%;
+    border-right: 2px solid #CDCDCD;
+    padding: 8px 30px 8px 15px;
+}
+
+.pj-description{
+    margin: 0;
+    padding:20px;
+    flex-grow: 1;
+}
+
+.project{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    border: 2px solid #CDCDCD;
+    margin: 10px 20px;
+    padding: 5px;
+}
+
+
+.project div{
+    margin: 0px 10px;
+}

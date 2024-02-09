@@ -1,0 +1,101 @@
+.form-pj{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 20px;
+}
+
+.form-pj label{
+    margin: 10px;
+}
+
+.form-pj input, .form-pj textarea{
+    width: 80%;
+    margin: 5px 0px;
+}
+
+.direccion-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+}
+
+.dic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.dic:first-child{
+    padding-right: 5px;
+}
+
+.dic:last-child{
+    padding-left: 5px;
+}
+
+.dic input{
+    width: 95%;
+    padding: 10px 5px;
+}
+
+.cl-priv{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cl-priv div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cl-priv div input{
+    margin:0px 10px;
+}
+
+.cont-1-imgs{
+    overflow: hidden;
+    width: 100%;
+}
+
+.cont-2-imgs{
+    overflow-x: auto;
+    display: flex;
+}
+
+.existing-image{
+    position: relative;
+    margin: 5px;
+}
+
+.existing-image img{
+    max-width: 300px;
+    max-height: 150px;
+}
+
+.delete-image{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    padding: 5px;
+}
+.caract{
+    display: flex;
+}
+
+.caract div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

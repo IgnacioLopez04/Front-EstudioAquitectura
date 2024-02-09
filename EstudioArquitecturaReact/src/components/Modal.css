@@ -1,0 +1,76 @@
+.div-modal{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0,0,0,0.5);
+}
+
+.header-modal{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0px;
+    border-bottom: 1px solid #CDCDCD;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.header-modal h2{
+    margin: 0px 10px ;
+}
+
+.header-modal button{
+    border: none;
+    background-color: transparent;
+}
+
+
+.modal{
+    border-radius: 25px;
+
+    width: 60%;
+    max-width: 700px;
+    min-height: 20vh;
+    max-height: 85vh;
+    position: relative;
+    background-color: white;
+
+    overflow-y: auto;
+}
+
+.modal::-webkit-scrollbar{
+    width: 10px;
+}
+
+.modal::-webkit-scrollbar-track{
+    margin-block: 2em;
+}
+
+.modal::-webkit-scrollbar-thumb{
+    background: #CDCDCD;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+/* Delete Modal */
+
+.delete-title{
+    text-align: center;
+    padding: 10px;
+}
+
+.div-delete{
+    display: flex;
+    justify-content: end;
+
+    padding: 10px;
+}

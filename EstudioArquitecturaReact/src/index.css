@@ -1,0 +1,50 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3{
+  margin: 0px;
+}
+
+li{
+  list-style: none;
+}
+
+button{
+  padding: 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #CDCDCD;
+  margin: 0px 5px;
+}
+
+button:hover{
+  background-color: rgba(122,121,121,0.6);
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 20px;
+}
+
+form input, form textarea{
+  width: 80%;
+  margin-bottom: 10px;
+
+  padding: 10px;
+}
+
+form label{
+  margin: 10px 0px;
+}
+
+form button{
+  margin: 10px;
+}
