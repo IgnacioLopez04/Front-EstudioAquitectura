@@ -25,11 +25,11 @@ export function NewProjectPage({cerrarModal, idProject, loadProjects}){
             const data2 = getValues();
             console.log(data2);
             await updateProject(idProject, data);
-            toast.success('Proyecto actualizado');
+            toast.success('Proyecto actualizado!');
             loadProjects();
         }else{
             createProject(data);
-            toast.success('Carga exitosa');
+            toast.success('Carga exitosa!');
             loadProjects();
         }
         cerrarModal();
