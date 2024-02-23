@@ -25,14 +25,20 @@ export function Footer(){
     return(
         <footer id="contactos">
             <ul id="datos">
-                <li>
-                <a 
-                href={`https://www.google.com/maps/search/${studio && studio.length > 0 ? encodeURIComponent(studio[0].direccion) : ''}`}
-                target="_blank"
-                > {studio[0].direccion}</a></li>
-                {architect.map(arc=>(
-                    <li> {arc.nombre} {arc.apellido} - <a href="tel:"> {arc.telefono}</a></li>
-                ))}
+                <div className="dato">
+                    <h3>Contactanos</h3>
+                    {architect.map(arc=>(
+                        <li> {arc.nombre} {arc.apellido} - <a href="tel:"> {arc.telefono}</a></li>
+                    ))}
+                </div>
+                <div className="divisor"></div>
+                <div className="dato">
+                    <h3>Visitanos en nuestro estudio</h3>
+                    <li><a 
+                    href={`https://www.google.com/maps/search/${studio && studio.length > 0 ? encodeURIComponent(studio[0].direccion) : ''}`}
+                    target="_blank"
+                    > {studio[0].direccion}</a></li>
+                </div>
             </ul>
             <ul id="redes">
                 <li><a href="" id="fb">Facebook</a></li>

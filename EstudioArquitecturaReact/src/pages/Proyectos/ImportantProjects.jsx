@@ -18,7 +18,7 @@ export function ImportantProjects(){
     
     return(
         <>
-            <section className="proy_importantes" id='proj-importants'>
+            <section className="proy_importantes" id='destacados'>
                 {projects.map((project=>
                 <a key={project.id} onClick={()=> navegate(`/inicio/${project.token}`)}>
                     <div>
