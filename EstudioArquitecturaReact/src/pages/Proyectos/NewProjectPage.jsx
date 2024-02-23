@@ -3,8 +3,10 @@ import { useForm } from 'react-hook-form';
 import { getAllClients } from "../../api/clients.api";
 import { createProject,updateProject, getProject, getImagesProject, deleteImage} from '../../api/projects.api'
 import { toast } from "react-hot-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
-export function NewProjectPage({cerrarModal, idProject, loadProjects}){
+export function NewProjectPage({cerrarModal, idProject, loads}){
 
     const [imagenes, setImagenes] = useState([]);
     const [clients, setClients] = useState([]);
@@ -21,17 +23,15 @@ export function NewProjectPage({cerrarModal, idProject, loadProjects}){
     // Crear o actualizar un proyecto
     const onSubmit = handleSubmit( async data=>{
         if (idProject != undefined){
-
-            const data2 = getValues();
-            console.log(data2);
             await updateProject(idProject, data);
             toast.success('Proyecto actualizado!');
-            loadProjects();
+            // loadProjects();
         }else{
             createProject(data);
+            // loadProjects();
             toast.success('Carga exitosa!');
-            loadProjects();
         }
+        loads();
         cerrarModal();
     })
 
@@ -55,7 +55,7 @@ export function NewProjectPage({cerrarModal, idProject, loadProjects}){
                 setValue('imagenes', resImg.data.imagenes);
             }
         }
-        loadProject();
+        loads();
     }, [])
 
     const handleFileSelect = (event) => {
@@ -93,7 +93,7 @@ export function NewProjectPage({cerrarModal, idProject, loadProjects}){
                         <input id='mtros-cubiertos' type='number' placeholder="154" { ... register('metrosCubiertos', {required: true})}></input>
                     </div>
                     <div>
-                        <label htmlFor="mtros-totales">Metros del terreno</label>
+                        <label htmlFor="mtros-totales">Metros terreno</label>
                         <input id='mtros-totales' type='number' placeholder="300" { ... register('metrosTotales', {required: true})}></input>
                     </div>
                     <div>
@@ -141,7 +141,7 @@ export function NewProjectPage({cerrarModal, idProject, loadProjects}){
                     }
                     </div>
                 </div>
-                <button className="btn-save">Guardar</button>
+                <button className="btn-save"><FontAwesomeIcon className="icon" icon={faFloppyDisk} />Guardar</button>
             </form>
         </>
     );

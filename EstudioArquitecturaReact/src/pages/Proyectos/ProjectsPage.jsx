@@ -70,18 +70,17 @@ export function ProjectsPage(){
                         <button onClick={()=>{openModalEliminar(project.token);}}>Eliminar</button>
                         <button onClick={()=>{openModalEditar(project.token);}}>Editar</button>
                         <button onClick={()=>{navigate(`/estudio/proyecto/${project.token}`)}}>Ver</button>
-
                     </div>
                 </div>
             ))}
             <Modal estado={estadoModal} cambiarEstado={closeModal} title='Nuevo Proyecto'>
-                <NewProjectPage cerrarModal={closeModal} client={params.id} loadProjects={loadProjects}></NewProjectPage>
+                <NewProjectPage cerrarModal={closeModal} client={params.id} loads={loadProjects}></NewProjectPage>
             </Modal>
             <Modal estado={estadoModalEliminar} cambiarEstado={closeModalEliminar} title='Eliminar proyecto'>
                 <DeseaEliminar funcion={deleteProject} id={idProyecto} cancelar={closeModalEliminar} aceptar={closeModalEliminar} loads={loadProjects}></DeseaEliminar>
             </Modal>
             <Modal estado={estadoEditar} cambiarEstado={closeModalEditar} title='Editar proyecto'>
-                <NewProjectPage cerrarModal={closeModalEditar} idProject={idProyecto} loadProjects={loadProjects}></NewProjectPage>
+                <NewProjectPage cerrarModal={closeModalEditar} idProject={idProyecto} loads={loadProjects}></NewProjectPage>
             </Modal>
         </>
     );

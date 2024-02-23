@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { getAllArquitectos } from "../api/arquitectos.api";
 import { getStudio } from '../api/estudio.api';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapLocationDot} from '@fortawesome/free-solid-svg-icons';
 
 export function Footer(){
 
@@ -34,7 +36,7 @@ export function Footer(){
                 <div className="divisor"></div>
                 <div className="dato">
                     <h3>Visitanos en nuestro estudio</h3>
-                    <li><a 
+                    <li><FontAwesomeIcon className="icon" icon={faMapLocationDot}/><a 
                     href={`https://www.google.com/maps/search/${studio && studio.length > 0 ? encodeURIComponent(studio[0].direccion) : ''}`}
                     target="_blank"
                     > {studio[0].direccion}</a></li>

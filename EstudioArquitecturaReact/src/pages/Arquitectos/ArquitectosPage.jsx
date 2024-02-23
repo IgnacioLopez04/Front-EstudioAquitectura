@@ -28,7 +28,6 @@ export function ArquitectosPage(){
 
     const openModalEliminar = (id)=>{
         setId(id);
-        console.log(id);
         setEliminar(!estadoModalEliminar);
     }
 

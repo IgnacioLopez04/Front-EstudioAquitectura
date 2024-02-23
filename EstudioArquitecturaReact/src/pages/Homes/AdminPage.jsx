@@ -35,7 +35,7 @@ function DataStudio(){
     }
     return(
         <>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className='form-studio'>
                 <label htmlFor='name'>Nombre</label>
                 <input id='name' type='text' {... register('nombre', {required:true})}></input>
                 <label htmlFor='direccion'>Direccion</label>

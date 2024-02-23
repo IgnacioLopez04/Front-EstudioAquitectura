@@ -88,24 +88,27 @@
 .proy_importantes a{
     flex: 1;
     cursor: pointer;
+    margin: 10px;
 }
 
 .proy_importantes div{
     display: flex;
     flex-direction: column;
     height: 100%;
+    /* padding: 10px; */
 
-    padding: 10px;
-}
-
-.proy_importantes div:hover{
-    border: 3px solid #CDCDCD;
+    border-bottom: 3px solid rgb(122, 121, 121);
 }
 
 .proy_importantes img{
     width: 100%;
-    padding: 10px 0px;
-    border-radius: 75px;
+
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.proy_importantes img:hover{
+    opacity: 1;
 }
 
 .pj{
@@ -115,12 +118,23 @@
 
 .proy_importantes div h2{
     background-color: #CBCBCB;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
-.proy_importantes div h2, .proy_importantes div p{
+.proy_importantes div h2{
     display: flex;
     justify-content: center;
+    padding: 12px 16px;
+}
+
+.proy_importantes div h2{
+    margin-bottom: 10px;
+}
+
+.proy_importantes div p{
+    height: 100%;
+    margin:0;
+    margin-top: 16px;
     padding: 10px 20px;
 }
 

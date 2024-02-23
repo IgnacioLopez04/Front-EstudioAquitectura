@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
-h1, h2{
-  font-family: 'Rufina', serif;
+h1, h2, h3{
+  /* font-family: 'Rufina', serif; */
+  font-family: 'Questrial', sans-serif;
 }
 p, a, li, label, input, textarea, button{
   font-family: 'Poppins', sans-serif;
@@ -22,7 +24,8 @@ li{
 }
 
 button{
-  padding: 15px;
+  font-size: 0.9rem;
+  padding: 10px 15px;
   cursor: pointer;
   border: none;
   border-radius: 10px;
@@ -57,3 +60,13 @@ form label{
 form button{
   margin: 10px;
 }
+
+span{
+  color: red;
+  padding: 5px 10px;
+  background-color: rgb(239, 202, 202);
+  border-radius: 5px;
+}
+ .icon{
+  padding-right: 8px;
+ }

@@ -79,6 +79,10 @@
     padding: 20px;
 }
 
+.form-studio{
+    padding: 0 30%;
+}
+
 /* Scroll */
 
 ::-webkit-scrollbar{

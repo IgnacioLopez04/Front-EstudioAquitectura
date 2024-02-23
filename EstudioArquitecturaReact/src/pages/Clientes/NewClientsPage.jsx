@@ -2,7 +2,9 @@ import { useEffect} from "react";
 import { useNavigate, useParams } from "react-router-dom"
 import { createClient, deleteClient, getClient, updateClient } from "../../api/clients.api";
 import { useForm } from "react-hook-form";
-import { toast } from 'react-hot-toast'
+import { toast } from 'react-hot-toast';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
 export function NewClientsPage({cambiarEstado}){
     const params = useParams();
@@ -56,14 +58,15 @@ export function NewClientsPage({cambiarEstado}){
                     <input id='lastname' type='text' placeholder='Ej: Castro' {...register('apellido', {required: true})}></input>
                     {errors.apellido && <span>El campo es requerido</span>}
                     <label htmlFor="dni">DNI</label>
-                    <input id='dni' type='text' placeholder="55.432.678" {...register('dni', {required: true})}></input>
-                    {errors.dni && <span>El campo es requerido</span>}
+                    <input id='dni' type='text' placeholder="55.432.678" {...register('dni', {required: true,  maxLength:8})}></input>
+                    {errors.dni && errors.dni.type === "required" && (<span>El campo es requerido.</span>)}
+                    {errors.dni && errors.dni.type === "maxLength" && (<span>El campo debe tener exactamente 8 dígitos.</span>)}
                     {params.id &&
                         <div>
                             <button name="btn-save">Actualizar</button>
                             <button name="btn-delete" onClick={deleteClientBtn}>Borrar</button>
                         </div> 
-                        || <button name="btn-save">Guardar</button>
+                        || <button name="btn-save"><FontAwesomeIcon className="icon" icon={faFloppyDisk} />Guardar</button>
                     }
                 </form>
             </article>
