@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form';
 import './AdminPage.css'
 import { createStudio, getStudio } from '../../api/estudio.api';
 import { toast } from 'react-hot-toast';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 
 function DataStudio(){
 
@@ -44,7 +46,7 @@ function DataStudio(){
                 <input id='email' type='text' {... register('correo', {required:true})}></input>
                 <label htmlFor='description'>Descripción</label>
                 <textarea rows={4} id='description' type='text' {... register('descripcion', {required:true})}></textarea>
-                <button>Guardar</button>
+                <button><FontAwesomeIcon icon={faFloppyDisk} className='icon'></FontAwesomeIcon>Guardar</button>
             </form>
         </>
     )

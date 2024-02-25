@@ -3,17 +3,23 @@ import { useNavigate } from "react-router-dom"
 import {Link} from 'react-scroll';
 import { getStudio } from "../api/estudio.api"
 
-function NavLink({href, text}){
+function NavLink({href, text, href2=null}){
 
     return(
-        // className="link-div-hm"
-        <Link className="link-div-hm" to={href} spy={true} smooth={true} offset={-170} duration={500}>{text}</Link>
+        <>
+            {href2==null && 
+                <Link className="link-div-hm" to={href} spy={true} smooth={true} offset={-170} duration={500}>{text}</Link>
+                ||
+                <a className="link-div-hm" href={href2}>{text}</a>
+            }
+        </>
     )
 }
 
 function LinksMenu(){
     return(
         <div className="links-menu-hm">
+            <NavLink href2={'/inicio/'} text={'Inicio'}></NavLink>
             <NavLink href={'destacados'} text={'Destacados'}></NavLink>
             <NavLink href={'proyectos'} text={'Proyectos'}></NavLink>
             <NavLink href={'contactos'} text={'Contacto'}></NavLink>
@@ -46,11 +52,6 @@ export function NavMenuHome(){
                         <h1 className="title-name-hm">{studio[0].nombre}</h1>
                     </div>
                     <LinksMenu></LinksMenu>
-                    {/* {href && 
-                    <>
-                        <LinksMenu text={text} href={href}></LinksMenu> 
-                    </>
-                    || ''} */}
                 </nav>
             </>
         )

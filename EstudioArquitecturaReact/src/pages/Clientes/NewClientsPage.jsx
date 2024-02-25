@@ -4,7 +4,7 @@ import { createClient, deleteClient, getClient, updateClient } from "../../api/c
 import { useForm } from "react-hook-form";
 import { toast } from 'react-hot-toast';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import { faFloppyDisk, faTrash} from "@fortawesome/free-solid-svg-icons";
 
 export function NewClientsPage({cambiarEstado}){
     const params = useParams();
@@ -63,8 +63,8 @@ export function NewClientsPage({cambiarEstado}){
                     {errors.dni && errors.dni.type === "maxLength" && (<span>El campo debe tener exactamente 8 dígitos.</span>)}
                     {params.id &&
                         <div>
-                            <button name="btn-save">Actualizar</button>
-                            <button name="btn-delete" onClick={deleteClientBtn}>Borrar</button>
+                            <button name="btn-save"><FontAwesomeIcon icon={faFloppyDisk} className="icon"/>Guardar</button>
+                            <button name="btn-delete" className='eliminar-btn' onClick={deleteClientBtn}> <FontAwesomeIcon icon={faTrash} className="icon"/>Eliminar</button>
                         </div> 
                         || <button name="btn-save"><FontAwesomeIcon className="icon" icon={faFloppyDisk} />Guardar</button>
                     }

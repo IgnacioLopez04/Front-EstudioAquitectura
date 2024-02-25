@@ -16,6 +16,7 @@
     flex-direction: column;
     flex-grow: 1;
 
+    width: 50%;
     margin: 10px;
 }
 
@@ -26,13 +27,16 @@
 .direccion{
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: start;
+    align-items: end;
 
-    margin: 20px;
+    width: 50%;
+
+    /* margin: 20px; */
 }
 
 .direccion p{
-    margin: 10px;
+    /* margin: 10px; */
 }
 
 .direccion span{
@@ -68,6 +72,13 @@
 .image{
     box-shadow: 0px 0px 10px black;
     max-height: 400px;
+}
+
+.span-pj{
+    color: #000000;
+    padding: 0;
+    padding-right: 5px;
+    background-color: transparent;
 }
 
 /* Responsive */

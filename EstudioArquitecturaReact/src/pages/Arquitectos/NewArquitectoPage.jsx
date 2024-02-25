@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { toast } from 'react-hot-toast';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import { faFloppyDisk, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export function NewArquitectoPage({cerrarModal, idArq, funcion}){
 
@@ -63,7 +63,7 @@ export function NewArquitectoPage({cerrarModal, idArq, funcion}){
 
                 <button className="btn-save"><FontAwesomeIcon className="icon" icon={faFloppyDisk} />Guardar</button>
             </form>
-            { params.id && <button onClick={deleteArquitectoBtn}>Borrar</button>}
+            { params.id && <button className="eliminar-btn" onClick={deleteArquitectoBtn}><FontAwesomeIcon icon={faTrash} className="icon"/>Eliminar</button>}
         </>
     )
 }

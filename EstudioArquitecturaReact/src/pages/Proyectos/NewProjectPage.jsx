@@ -25,11 +25,11 @@ export function NewProjectPage({cerrarModal, idProject, loads}){
         if (idProject != undefined){
             await updateProject(idProject, data);
             toast.success('Proyecto actualizado!');
-            // loadProjects();
+            loads();
         }else{
             createProject(data);
-            // loadProjects();
             toast.success('Carga exitosa!');
+            loads();
         }
         loads();
         cerrarModal();
@@ -55,7 +55,7 @@ export function NewProjectPage({cerrarModal, idProject, loads}){
                 setValue('imagenes', resImg.data.imagenes);
             }
         }
-        loads();
+        loadProject();
     }, [])
 
     const handleFileSelect = (event) => {
@@ -63,10 +63,15 @@ export function NewProjectPage({cerrarModal, idProject, loads}){
     };
 
     const handleDelete = async (image, idProject) => {
-
         const nameArray = image.split('/');
         const name = nameArray[nameArray.length - 1];
-        await deleteImage(name, idProject);
+
+        try{
+            await deleteImage(name, idProject);
+            toast.success('Imagen eliminada.');
+        }catch{
+            toast.error('No se ha podido eliminar la imagen.')
+        }
     }
 
     return(
@@ -133,15 +138,15 @@ export function NewProjectPage({cerrarModal, idProject, loads}){
                     <div className="cont-2-imgs">
                     {idProject != undefined && 
                         imagenes.map((image)=>(
-                                <div key={image.id} className="existing-image">
-                                    <img src={`${image}`}></img>
-                                    <button className="delete-image" onClick={ ()=> handleDelete(image, idProject)}>X</button>
-                                </div>
+                            <div key={image.id} className="existing-image">
+                                <img src={`${image}`}></img>
+                                <button className="delete-image" onClick={ ()=> handleDelete(image, idProject)}>X</button>
+                            </div>
                         ))
                     }
                     </div>
                 </div>
-                <button className="btn-save"><FontAwesomeIcon className="icon" icon={faFloppyDisk} />Guardar</button>
+                <button className="btn-save"><FontAwesomeIcon className="icon" icon={faFloppyDisk}/>Guardar</button>
             </form>
         </>
     );

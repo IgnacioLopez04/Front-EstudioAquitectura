@@ -7,7 +7,8 @@ import { Modal } from "../../components/Modal";
 import { DeseaEliminar } from "../../components/DeseaEliminar";
 import { NewArquitectoPage } from '../Arquitectos/NewArquitectoPage';
 import { deleteArquitecto } from "../../api/arquitectos.api"; 
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPen } from "@fortawesome/free-solid-svg-icons";
 
 export function ArquitectosPage(){
 
@@ -62,8 +63,8 @@ export function ArquitectosPage(){
                     <h2 className="arq-name"  >{arquitecto.nombre} {arquitecto.apellido}</h2>
                     <p className="arq-desc">{arquitecto.descripcion}</p>
                     <div className="div-btn">
-                        <button onClick={()=>{openModalEliminar(arquitecto.id);}}>Eliminar</button>
-                        <button onClick={()=>{openModalEditar(arquitecto.id);}}>Editar</button>
+                        <button onClick={()=>{openModalEditar(arquitecto.id);}}><FontAwesomeIcon icon={faPen} className="icon"/>Editar</button>
+                        <button className='eliminar-btn' onClick={()=>{openModalEliminar(arquitecto.id);}}><FontAwesomeIcon icon={faTrash} className='icon'/>Eliminar</button>
                     </div>
                 </div>
             ))}

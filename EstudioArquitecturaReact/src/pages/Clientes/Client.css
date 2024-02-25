@@ -30,6 +30,7 @@
     width: 90%;
     background-color: #CDCDCD;
     padding: 10px;
+    border-radius: 5px;
 
     transition:  ease-in-out 0.2s;
     cursor: pointer;

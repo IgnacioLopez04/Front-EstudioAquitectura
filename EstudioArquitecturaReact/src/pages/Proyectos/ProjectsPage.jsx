@@ -5,6 +5,10 @@ import { Modal } from "../../components/Modal";
 import { DeseaEliminar } from "../../components/DeseaEliminar";
 import { NewProjectPage } from "./NewProjectPage";
 import { useNavigate, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare, faMagnifyingGlass, faTrash, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+
+
 
 
 
@@ -60,16 +64,16 @@ export function ProjectsPage(){
         <>
             <div className='title-nw-pj'>
                 <h2 className='py-clients'>Proyectos</h2>
-                <button onClick={()=>{openModal();}}>Nuevo Proyecto</button>
+                <button onClick={()=>{openModal();}}><FontAwesomeIcon icon={faCirclePlus} className="icon"/>Nuevo Proyecto</button>
             </div>
             {projects.map(project => (
                 <div key={project.id} className="project">
                     <h2 className="pj-name">{project.nombre}</h2>
                     <p className="pj-description">{project.descripcion}</p>
-                    <div>
-                        <button onClick={()=>{openModalEliminar(project.token);}}>Eliminar</button>
-                        <button onClick={()=>{openModalEditar(project.token);}}>Editar</button>
-                        <button onClick={()=>{navigate(`/estudio/proyecto/${project.token}`)}}>Ver</button>
+                    <div className="btns-pj">
+                        <button onClick={()=>{openModalEditar(project.token);}}><FontAwesomeIcon icon={faPenToSquare} className="icon"/>Editar</button>
+                        <button onClick={()=>{navigate(`/estudio/proyecto/${project.token}`)}}><FontAwesomeIcon icon={faMagnifyingGlass} className="icon"/>Ver</button>
+                        <button className='eliminar-btn' onClick={()=>{openModalEliminar(project.token);}}><FontAwesomeIcon icon={faTrash} className="icon"/>Eliminar</button>
                     </div>
                 </div>
             ))}

@@ -41,9 +41,9 @@ export function OneProjectPage(){
                         <p>{project.descripcion}</p>
                     </div>
                     <div className="direccion">
-                        <p><span>Calle:</span> {project.direccion}</p>
-                        <p><span>Ciudad:</span> {project.ciudad}</p>
-                        {!urlInicio && <p><span>Proyecto privado:</span> {project.esPrivado && 'SI' || 'NO'}</p>}
+                        <p><span className="span-pj">Calle:</span> {project.direccion}</p>
+                        <p><span className="span-pj">Ciudad:</span> {project.ciudad}</p>
+                        {!urlInicio && <p><span className="span-pj">Proyecto privado:</span> {project.esPrivado && 'SI' || 'NO'}</p>}
                     </div>
                 </article>
                 <article className="images">
