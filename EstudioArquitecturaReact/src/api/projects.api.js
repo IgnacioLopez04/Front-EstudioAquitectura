@@ -17,6 +17,8 @@ const imagesApi = axios.create({
     // withCredentials: true,
 });
 
+export const deleteImage = (image, tk)=> imagesApi.delete(`${image}/${tk}`);
+
 const imageApi = axios.create({
     baseURL: `${import.meta.env.VITE_SERVER_ORIGIN}`,
 });
@@ -42,7 +44,6 @@ export const getImportantProject = ()=> destacadosApi.get('/');
 // 'http://127.0.0.1:8000/sitio/api/proyectos/images/',
 export const getImagesProject = (tk)=> imagesApi.get(`/${tk}`); 
 
-export const deleteImage = (image, tk)=> imagesApi.delete(`${image}/${tk}`);
 
 // 'http://127.0.0.1:8000',
 export const getImage = (path)=> imageApi.get(`${path}`);

@@ -14,11 +14,13 @@ export function Galeria(){
 
     return(
         <>
-            <section className="galeria">
-                {gallery.map( image =>(
-                    <img src={`${image}`} ></img>
-                ))}
-            </section>
+            {gallery.length < 5 && <></> ||
+                <section className="galeria">
+                    {gallery.map( image =>(
+                        <img src={`${image}`} ></img>
+                    ))}
+                </section>
+            }
         </>
     )
 }

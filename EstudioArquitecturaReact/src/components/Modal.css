@@ -22,6 +22,8 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+
+    background-color: white;
 }
 
 .header-modal h2{
@@ -37,6 +39,7 @@
     border-radius: 25px;
 
     width: 60%;
+    min-width: 700px;
     max-width: 700px;
     min-height: 20vh;
     max-height: 85vh;
@@ -74,6 +77,8 @@
 .delete-title{
     text-align: center;
     padding: 10px;
+    margin: 10px 0px;
+    font-size: 1.8rem;
 }
 
 .div-delete{

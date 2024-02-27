@@ -7,6 +7,7 @@ import { createStudio, getStudio } from '../../api/estudio.api';
 import { toast } from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
+import imgEstudio from '../../assets/images.jpg';
 
 function DataStudio(){
 
@@ -59,14 +60,14 @@ export function AdminPage(){
             <NavMenu></NavMenu>
             <article className='article-admin'>
                 <div className='div-title-p'>
-                    <h2>No se, deberia ir un titulo</h2>
+                    <h2>¿Qué podes hacer?</h2>
                     <p>Aquí podrás configurar la página completa que será visible para tus clientes. 
                     Podrás personalizarla con imágenes de tus proyectos, descripciones detalladas e 
                     información de contacto. Además, tendrás la capacidad de cargar nuevos proyectos, 
                     agregar clientes recientes y incluir a los arquitectos que se unan al estudio en el 
                     futuro.</p>
                 </div>
-                <img className='img-admin' alt='Aca va una imagen de la fachada del estudio o del estudio'></img>
+                <img src={imgEstudio} className='img-admin' alt='Aca va una imagen de la fachada del estudio o del estudio'></img>
             </article>
             <TitlePages title='Estudio'></TitlePages>
             <DataStudio></DataStudio>

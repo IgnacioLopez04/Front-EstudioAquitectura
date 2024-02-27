@@ -64,7 +64,8 @@ export function NewProjectPage({cerrarModal, idProject, loads}){
 
     const handleDelete = async (image, idProject) => {
         const nameArray = image.split('/');
-        const name = nameArray[nameArray.length - 1];
+        let name = nameArray[nameArray.length - 1];
+        name = name.replace(/\.jpg$/, "");
 
         try{
             await deleteImage(name, idProject);
@@ -130,7 +131,7 @@ export function NewProjectPage({cerrarModal, idProject, loads}){
                     </div>
                     <div>
                         <label htmlFor="private">Destacado</label>
-                        <input type="checkbox" id="private" {... register('destacado', {required: false})}></input>
+                        <input type="checkbox" {... register('destacado', {required: false})}></input>
                     </div>
                 </div>
                 <input type='file' className="imagenes" name='imagenes' multiple  onChange={handleFileSelect}></input>

@@ -1,22 +1,12 @@
 import { Link, useNavigate } from "react-router-dom"
 import '../pages/Homes/AdminPage.css'
 
-function NavLink({href, text}){
-
-    return(
-        <div className="link-div">
-            <Link to={href}>{text}</Link>
-        </div>
-    )
-}
-
 function LinksMenu(){
     return(
         <article className="links-menu">
-            <NavLink href='/estudio' text='Estudio'></NavLink>
-            <NavLink href='/estudio/clientes' text='Clientes'></NavLink>
-            <NavLink href='/estudio/arquitectos' text='Arquitectos'></NavLink>
-            <NavLink href='/inicio' text='Inicio'></NavLink>
+            <Link to='/estudio'>Estudio</Link>
+            <Link to='/estudio/clientes'>Clientes</Link>
+            <Link to='/estudio/arquitectos'>Arquitectos</Link>
         </article>
     )
 }

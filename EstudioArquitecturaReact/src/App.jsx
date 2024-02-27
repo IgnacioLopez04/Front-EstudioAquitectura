@@ -9,11 +9,14 @@ import { Toaster } from 'react-hot-toast'
 import './App.css';
 import { OneClient } from './pages/Clientes/OneClient';
 import { OneProjectPage } from './pages/Proyectos/OneProjectPage';
+import { Login } from './pages/Login';
+import { PrivateRouter } from './utils/PrivateRouter';
 
 export function App(){
   return(
     <HashRouter>
       <Routes>
+        <Route path='/login' element={<Login></Login>}></Route>
         <Route path="/" element={<Navigate to="/inicio"/>}/>
         <Route path="/inicio" element={<HomePage />}></Route>
         <Route path="/estudio" element={<AdminPage />}></Route>

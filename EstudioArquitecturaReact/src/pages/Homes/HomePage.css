@@ -317,7 +317,7 @@ footer ul li a{
 }
 
 #redes a{
-    background: url(../../imagenes/sprite2.png) no-repeat -53px -45px;
+    background: url(../../assets/sprite2.png) no-repeat -53px -45px;
     overflow: hidden;
     text-indent: -200px;
     display: inline-block;
