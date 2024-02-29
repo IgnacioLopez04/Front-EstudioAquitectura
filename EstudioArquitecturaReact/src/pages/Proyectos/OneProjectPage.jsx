@@ -35,6 +35,9 @@ export function OneProjectPage(){
     const toggleModal = ()=>{
         setEstadoModalQr(!estadoModalQr);
     }
+
+    const Dominio = window.location.hostname;
+    const UrlQr = Dominio + '/#/inicio/' + params.id;
    
 
     const title = 'Proyecto '+ ' - ' + `${project.nombre}`
@@ -69,7 +72,7 @@ export function OneProjectPage(){
             </section>
             <Modal estado={estadoModalQr} cambiarEstado={()=>{toggleModal();}} title={'Código QR'}>
                 <section className="div-qr">
-                    <QRCode value={window.location.href} fgColor="#000000" bgColor="#ffffff" size={200} style={{height: '250px', width:'250px'}}></QRCode>
+                    <QRCode value={UrlQr} fgColor="#000000" bgColor="#ffffff" size={200} style={{height: '250px', width:'250px'}}></QRCode>
                     <button className="imprimir">Imprimir QR</button>
                 </section>
             </Modal>
