@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { NavMenuHome } from '../../components/NavMenu';
 import { NavMenu } from "../../components/NavMenuAdmin";
 import { TitlePages } from "../../components/TitlePages";
@@ -36,9 +36,13 @@ export function OneProjectPage(){
         setEstadoModalQr(!estadoModalQr);
     }
 
-    const UrlQr = 'https://estudio-aquitectura.vercel.app/#/inicio/' + params.id;
+    const qrSectionRef = useRef(null);
 
-   
+    const imprimirQR = () => {
+        window.print();
+    };
+
+    const UrlQr = 'https://estudio-aquitectura.vercel.app/#/inicio/' + params.id;
 
     const title = 'Proyecto '+ ' - ' + `${project.nombre}`
     return(
@@ -72,8 +76,8 @@ export function OneProjectPage(){
             </section>
             <Modal estado={estadoModalQr} cambiarEstado={()=>{toggleModal();}} title={'Código QR'}>
                 <section className="div-qr">
-                    <QRCode value={UrlQr} fgColor="#000000" bgColor="#ffffff" size={200} style={{height: '250px', width:'250px'}}></QRCode>
-                    <button className="imprimir">Imprimir QR</button>
+                    <QRCode ref={qrSectionRef} value={UrlQr} fgColor="#000000" bgColor="#ffffff" size={200} style={{height: '250px', width:'250px'}}></QRCode>
+                    <button className="imprimir" onClick={imprimirQR}>Imprimir QR</button>
                 </section>
             </Modal>
         </>
