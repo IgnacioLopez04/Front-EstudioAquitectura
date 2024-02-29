@@ -70,8 +70,9 @@ export function AuthProvider({children}){
 
     useEffect(()=>{
         
-        if(loading){
+        if(!loading){
             updateToken();
+            setLoading(true);
         }
         // Se va actualizando cada 15 min si es que me mantengo en el navegador.
         const Minutos = 1000 * 60 * 15

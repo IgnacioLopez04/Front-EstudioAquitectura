@@ -13,8 +13,8 @@ import { Login } from './pages/Login';
 import PrivateRoutes from './utils/PrivateRoutes';
 import { AuthProvider } from './context/AuthContext';
 
-
 export function App(){
+
   return(
     <>
       <HashRouter>
