@@ -36,8 +36,8 @@ export function OneProjectPage(){
         setEstadoModalQr(!estadoModalQr);
     }
 
-    const Dominio = window.location.hostname;
-    const UrlQr = Dominio + '/#/inicio/' + params.id;
+    const UrlQr = 'https://estudio-aquitectura.vercel.app/#/inicio/' + params.id;
+
    
 
     const title = 'Proyecto '+ ' - ' + `${project.nombre}`

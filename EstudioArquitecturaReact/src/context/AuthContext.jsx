@@ -55,9 +55,9 @@ export function AuthProvider({children}){
             logoutUser();
         }
 
-        if(loading){
-            setLoading(false);
-        }
+        // if(loading){
+        //     setLoading(false);
+        // }
     }
 
     // Los datos necesarios para los diferentes contextos.
@@ -70,9 +70,9 @@ export function AuthProvider({children}){
 
     useEffect(()=>{
         
-        if(loading){
-            updateToken();
-        }
+        // if(loading){
+        //     updateToken();
+        // }
         // Se va actualizando cada 15 min si es que me mantengo en el navegador.
         const Minutos = 1000 * 60 * 15
         let interval = setInterval(()=>{
@@ -86,7 +86,8 @@ export function AuthProvider({children}){
     // Si no se carga todo aquello que sea necesario para tener una sesion, no renderiza el resto de hijos.
     return(
         <AuthContext.Provider value={contextData}>
-            {loading ? null : children}
+            {/* {loading ? null : children} */}
+            {children}
         </AuthContext.Provider>
     )
 }

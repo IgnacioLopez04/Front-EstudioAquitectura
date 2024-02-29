@@ -2,9 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top:0px;
+    width: 99%;
+    z-index: 150;
 
     padding: 15px 10px;
     background-color: #CBCBCB;
+    box-shadow: 0px 0px 10px rgb(122, 121, 121);
 }
 
 .title-div{
@@ -65,6 +70,7 @@
 
 .article-admin{
     margin: 20px;
+    margin-top: 120px;
 
     display: flex;
 }

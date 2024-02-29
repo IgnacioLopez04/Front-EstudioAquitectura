@@ -19,7 +19,7 @@ function NavLink({href, text, href2=null}){
 function LinksMenu(){
     return(
         <div className="links-menu-hm">
-            <NavLink href2={'/inicio/'} text={'Inicio'}></NavLink>
+            <NavLink href2={'/'} text={'Inicio'}></NavLink>
             <NavLink href={'destacados'} text={'Destacados'}></NavLink>
             <NavLink href={'proyectos'} text={'Proyectos'}></NavLink>
             <NavLink href={'contactos'} text={'Contacto'}></NavLink>
