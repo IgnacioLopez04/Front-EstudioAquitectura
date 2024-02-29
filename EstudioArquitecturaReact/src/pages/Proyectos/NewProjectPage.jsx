@@ -1,10 +1,11 @@
-import { useEffect, useState} from "react";
+import { useContext, useEffect, useState} from "react";
 import { useForm } from 'react-hook-form';
 import { getAllClients } from "../../api/clients.api";
 import { createProject,updateProject, getProject, getImagesProject, deleteImage} from '../../api/projects.api'
 import { toast } from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import AuthContext from "../../context/AuthContext";
 
 export function NewProjectPage({cerrarModal, idProject, loads}){
 
@@ -62,16 +63,27 @@ export function NewProjectPage({cerrarModal, idProject, loads}){
         setValue('imagenes',event.target.files);
     };
 
+    let {authTokens, logoutUser} = useContext(AuthContext);
+
     const handleDelete = async (image, idProject) => {
         const nameArray = image.split('/');
         let name = nameArray[nameArray.length - 1];
         name = name.replace(/\.jpg$/, "");
 
+        let headers = {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${String(authTokens.access)}`,
+        };
+
         try{
-            await deleteImage(name, idProject);
+            await deleteImage(name, idProject, headers);
             toast.success('Imagen eliminada.');
-        }catch{
-            toast.error('No se ha podido eliminar la imagen.')
+        }catch(e){
+            if(e.response.status == 401){
+                logoutUser();
+            }else{
+                toast.error('No se ha podido eliminar la imagen.')
+            }
         }
     }
 

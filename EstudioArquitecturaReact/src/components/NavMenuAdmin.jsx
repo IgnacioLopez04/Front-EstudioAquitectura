@@ -1,12 +1,18 @@
 import { Link, useNavigate } from "react-router-dom"
 import '../pages/Homes/AdminPage.css'
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
 
 function LinksMenu(){
+
+    // let {logoutUser} = useContext(AuthContext);
+
     return(
         <article className="links-menu">
             <Link to='/estudio'>Estudio</Link>
             <Link to='/estudio/clientes'>Clientes</Link>
             <Link to='/estudio/arquitectos'>Arquitectos</Link>
+            {/* <Link to='/login' onClick={logoutUser}>Cerrar Sesión</Link> */}
         </article>
     )
 }

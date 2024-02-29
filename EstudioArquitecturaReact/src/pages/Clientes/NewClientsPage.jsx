@@ -38,15 +38,6 @@ export function NewClientsPage({cambiarEstado}){
         }
         
     })
-    
-    // const deleteClientBtn = async ()=>{
-    //     const accepted = window.confirm('Estas seguro que quieres eliminar el cliente?');
-    //     if(accepted){
-    //         await deleteClient(params.id);
-    //         toast.success('Cliente eliminado');
-    //         navigate('/estudio/clientes/');
-    //     }
-    // } 
 
     const openModalEliminar = ()=>{
         setEliminar(!estadoModalEliminar);
