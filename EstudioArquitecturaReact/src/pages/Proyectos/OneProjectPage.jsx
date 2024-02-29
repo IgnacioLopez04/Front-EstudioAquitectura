@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import { NavMenuHome } from '../../components/NavMenu';
 import { NavMenu } from "../../components/NavMenuAdmin";
 import { TitlePages } from "../../components/TitlePages";
+import { Modal } from "../../components/Modal";
 import { useLocation, useParams } from "react-router-dom";
 import { getImagesProject, getProject } from "../../api/projects.api";
 import './OneProject.css';
+import QRCode from 'react-qr-code';
 
 export function OneProjectPage(){
     const [project, setProject] = useState([]);
     const [images, setImages] = useState([]);
     const [urlInicio, setUrlInicio] = useState(false);
+    const [estadoModalQr, setEstadoModalQr] = useState(false);
     const params = useParams();
     const location = useLocation();
 
@@ -29,11 +32,16 @@ export function OneProjectPage(){
         loadProject();
     }, [])
 
+    const toggleModal = ()=>{
+        setEstadoModalQr(!estadoModalQr);
+    }
+   
+
     const title = 'Proyecto '+ ' - ' + `${project.nombre}`
     return(
         <>
             {urlInicio && <NavMenuHome href="/inicio" text='Inicio'></NavMenuHome> || <NavMenu></NavMenu>}
-            <TitlePages title={title}></TitlePages>
+            <TitlePages title={title} onClickModal={()=>{toggleModal();}} text={'Código QR'}></TitlePages>
             <section className="section-pj">
                 <article>
                     <div className="detalle">
@@ -59,6 +67,12 @@ export function OneProjectPage(){
                     </div>
                 </article>
             </section>
+            <Modal estado={estadoModalQr} cambiarEstado={()=>{toggleModal();}} title={'Código QR'}>
+                <section className="div-qr">
+                    <QRCode value={window.location.href} fgColor="#000000" bgColor="#ffffff" size={200} style={{height: '250px', width:'250px'}}></QRCode>
+                    <button className="imprimir">Imprimir QR</button>
+                </section>
+            </Modal>
         </>
     )
 }

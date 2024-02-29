@@ -8,10 +8,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faMagnifyingGlass, faTrash, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
-
-
-
-
 export function ProjectsPage(){
     // Se inicializa vacio y luego se carga
     const params = useParams();
@@ -50,13 +46,9 @@ export function ProjectsPage(){
         setEditar(!estadoEditar);
     }
 
-    const openModal = ()=>{
+    const toggleModal = ()=>{
         setEstadoModal(!estadoModal);
     };
-
-    const closeModal = ()=>{
-        setEstadoModal(!estadoModal);
-    }
 
     const navigate = useNavigate()
 
@@ -64,7 +56,7 @@ export function ProjectsPage(){
         <>
             <div className='title-nw-pj'>
                 <h2 className='py-clients'>Proyectos</h2>
-                <button onClick={()=>{openModal();}}><FontAwesomeIcon icon={faCirclePlus} className="icon"/>Nuevo Proyecto</button>
+                <button onClick={()=>{toggleModal();}}><FontAwesomeIcon icon={faCirclePlus} className="icon"/>Nuevo Proyecto</button>
             </div>
             {projects.map(project => (
                 <div key={project.id} className="project">
@@ -77,8 +69,8 @@ export function ProjectsPage(){
                     </div>
                 </div>
             ))}
-            <Modal estado={estadoModal} cambiarEstado={closeModal} title='Nuevo Proyecto'>
-                <NewProjectPage cerrarModal={closeModal} client={params.id} loads={loadProjects}></NewProjectPage>
+            <Modal estado={estadoModal} cambiarEstado={toggleModal} title='Nuevo Proyecto'>
+                <NewProjectPage cerrarModal={toggleModal} client={params.id} loads={loadProjects}></NewProjectPage>
             </Modal>
             <Modal estado={estadoModalEliminar} cambiarEstado={closeModalEliminar} title='Eliminar proyecto'>
                 <DeseaEliminar funcion={deleteProject} id={idProyecto} cancelar={closeModalEliminar} aceptar={closeModalEliminar} loads={loadProjects}></DeseaEliminar>

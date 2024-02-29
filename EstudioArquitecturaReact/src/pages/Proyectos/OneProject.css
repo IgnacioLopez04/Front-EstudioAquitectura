@@ -81,6 +81,19 @@
     background-color: transparent;
 }
 
+.div-qr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 20px 5px;
+}
+
+.imprimir{
+    margin-top: 20px;
+}
+
 /* Responsive */
 
 @media  screen and (max-width: 470px) {
