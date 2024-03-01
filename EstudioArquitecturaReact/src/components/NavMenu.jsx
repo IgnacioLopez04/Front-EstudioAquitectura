@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {Link} from 'react-scroll';
-import { getStudio } from "../api/estudio.api"
+import { getStudio } from "../api/estudio.api";
+import Logo from '../assets/LogoNegro.svg';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Footer } from "./Footer";
 
 function NavLink({href, text, href2=null}){
 
@@ -48,8 +52,10 @@ export function NavMenuHome(){
         return(
             <>
                 <nav className="menu-div-hm">
-                    <div className="title-div-hm" onClick={()=>{navigate('/inicio/')}}>
-                        <h1 className="title-name-hm">{studio[0].nombre}</h1>
+                    <div className="div-menu-res">
+                        <FontAwesomeIcon icon={faBars} className="btn-menu-res"></FontAwesomeIcon>
+                        <img src={Logo} alt="Logo" className="logo" onClick={()=>{navigate('/')}}></img>
+                        {/* <h1 className="title-name-hm">{studio[0].nombre}</h1> */}
                     </div>
                     <LinksMenu></LinksMenu>
                 </nav>

@@ -2,7 +2,8 @@ import { useEffect, useState } from "react"
 import { getAllArquitectos } from "../api/arquitectos.api";
 import { getStudio } from '../api/estudio.api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapLocationDot} from '@fortawesome/free-solid-svg-icons';
+import { faMapLocationDot, faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/fontawesome-free-brands'
 
 export function Footer(){
 
@@ -24,19 +25,27 @@ export function Footer(){
             <div className="loading-div"></div>
         )
     }
+
+    const mailto = `mailto:${studio[0].correo}`;
+
     return(
         <footer id="contactos">
             <ul id="datos">
                 <div className="dato">
-                    <h3>Contactanos</h3>
+                    <h3><FontAwesomeIcon icon={faWhatsapp} className="icon"></FontAwesomeIcon> Telefonos</h3>
                     {architect.map(arc=>(
                         <li> {arc.nombre} {arc.apellido} - <a href="tel:"> {arc.telefono}</a></li>
                     ))}
                 </div>
                 <div className="divisor"></div>
                 <div className="dato">
-                    <h3>Visitanos en nuestro estudio</h3>
-                    <li><FontAwesomeIcon className="icon" icon={faMapLocationDot}/><a 
+                    <h3><FontAwesomeIcon icon={faEnvelope} className="icon"></FontAwesomeIcon>Mail</h3>
+                    <li><a href={mailto}>{studio[0].correo}</a></li>
+                </div>
+                <div className="divisor"></div>
+                <div className="dato">
+                    <h3><FontAwesomeIcon className="icon" icon={faMapLocationDot}/>Visitanos en nuestro estudio</h3>
+                    <li><a 
                     href={`https://www.google.com/maps/search/${studio && studio.length > 0 ? encodeURIComponent(studio[0].direccion) : ''}`}
                     target="_blank"
                     > {studio[0].direccion}</a></li>

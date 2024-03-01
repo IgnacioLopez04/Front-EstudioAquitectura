@@ -79,3 +79,9 @@ span{
 .eliminar-btn:hover{
   background-color: rgb(255, 129, 129);
 }
+
+.logo{
+  margin: 0px 10px;
+  cursor: pointer;
+  width: 85%;
+}

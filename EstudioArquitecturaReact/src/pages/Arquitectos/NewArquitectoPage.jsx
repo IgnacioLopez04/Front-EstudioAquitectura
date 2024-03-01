@@ -26,11 +26,11 @@ export function NewArquitectoPage({cerrarModal, idArq, funcion}){
 
     const onSubmit = handleSubmit(async data =>{
 
+        console.log(data.telefono);
         if(idArq != undefined){
             try{
                 const res = await updateArquitecto(idArq, data)
                 toast.success('Arquitecto actualizado');
-
             } catch(e){
                 if(e.response.status == 400){
                     toast.error('El telefono no puede tener más de 10 digitos. Intentelo de nuevo.');
@@ -54,7 +54,7 @@ export function NewArquitectoPage({cerrarModal, idArq, funcion}){
                 <input id='lastName' placeholder='Apellido' {...register('apellido', {required: true})}></input>
                 {errors.apellido && <span>El campo es requerido</span>}
                 <label htmlFor="phone">Teléfono</label>
-                <input type='text' id='phone' placeholder="3492123456"{...register('telefono', {required: true, pattern:/^[0-9]{10}$/})}></input>
+                <input type='text' id='phone' placeholder="3492123456" {...register('telefono', {required: true, pattern:/^(?:\+?54)?(?:\s?9)?(?:11|[2368]\d)(?:(?=\d{0,4}?\s?\d{4})\d{4}){2}$/})}></input>
                 {errors.telefono && errors.telefono.type === "required" && (<span>El campo es requerido.</span>)}
                 {errors.telefono && errors.telefono.type === "pattern" && (<span>El campo debe tener como máximo 10 dígitos y sin caracteres.</span>)}
                 <label htmlFor="description" type='text'>Descripción</label>
