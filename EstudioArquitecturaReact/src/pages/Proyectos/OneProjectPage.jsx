@@ -50,7 +50,7 @@ export function OneProjectPage(){
             {urlInicio && <NavMenuHome href="/inicio" text='Inicio'></NavMenuHome> || <NavMenu></NavMenu>}
             <TitlePages title={title} onClickModal={()=>{toggleModal();}} text={'Código QR'}></TitlePages>
             <section className="section-pj">
-                <article>
+                <article className="detalle-direc">
                     <div className="detalle">
                         <h2>Detalle:</h2>
                         <p>{project.descripcion}</p>

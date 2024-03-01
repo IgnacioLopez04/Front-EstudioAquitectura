@@ -7,7 +7,9 @@
     display: flex;
     margin: 20px 20px 0px 20px;
     padding-bottom: 20px;
+}
 
+.section-pj article:not(:last-child){
     border-bottom: 2px dotted rgb(122, 121, 121);
 }
 
@@ -91,6 +93,25 @@
 /* Responsive */
 
 @media  screen and (max-width: 470px) {
+    
+    .detalle-direc{
+        flex-direction: column-reverse;
+    }
+
+    .detalle{
+        width: 100%;
+    }
+
+    .direccion{
+        width: 100%;
+        align-items: start;
+        margin: 0px 10px;
+    }
+
+    .direccion p{
+        margin: 8px 0px;
+    }
+    
     .image{
         max-height: 220px;
     }
