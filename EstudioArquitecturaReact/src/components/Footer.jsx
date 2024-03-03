@@ -52,7 +52,6 @@ export function Footer(){
                 </div>
             </ul>
             <ul id="redes">
-                <li><a href="" id="fb">Facebook</a></li>
                 <li><a href="https://www.instagram.com/gabutti_piovano/?igsh=OHN6Zm1icGx1NDNy" id="ig" target="_blank">Instagram</a></li>
             </ul>
         </footer>

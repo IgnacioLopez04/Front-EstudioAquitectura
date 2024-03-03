@@ -6,6 +6,7 @@ import Logo from '../assets/LogoNegro.svg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Footer } from "./Footer";
+import {MenuSlide} from "./MenuSlide.jsx";
 
 function NavLink({href, text, href2=null}){
 
@@ -20,7 +21,8 @@ function NavLink({href, text, href2=null}){
     )
 }
 
-function LinksMenu(){
+export function LinksMenu(){
+
     return(
         <div className="links-menu-hm">
             <NavLink href2={'/'} text={'Inicio'}></NavLink>
@@ -44,6 +46,11 @@ export function NavMenuHome(){
         loadTitle();
     }, []);
 
+    const abrirMenu = ()=>{
+        const menu = document.getElementsByClassName('menu-slide')[0];
+        menu.style.transform = 'translateX(0%)';
+    }
+
     if (studio === undefined){
         return(
             <div className="loading-div"></div>
@@ -53,11 +60,12 @@ export function NavMenuHome(){
             <>
                 <nav className="menu-div-hm">
                     <div className="div-menu-res">
-                        <FontAwesomeIcon icon={faBars} className="btn-menu-res"></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faBars} className="btn-menu-res" onClick={abrirMenu}></FontAwesomeIcon>
                         <img src={Logo} alt="Logo" className="logo" onClick={()=>{navigate('/')}}></img>
                         {/* <h1 className="title-name-hm">{studio[0].nombre}</h1> */}
                     </div>
                     <LinksMenu></LinksMenu>
+                    {/* <MenuSlide></MenuSlide> */}
                 </nav>
             </>
         )

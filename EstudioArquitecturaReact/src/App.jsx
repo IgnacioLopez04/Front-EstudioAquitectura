@@ -12,11 +12,13 @@ import { OneProjectPage } from './pages/Proyectos/OneProjectPage';
 import { Login } from './pages/Login';
 import PrivateRoutes from './utils/PrivateRoutes';
 import { AuthProvider } from './context/AuthContext';
+import { MenuSlide } from './components/MenuSlide';
 
 export function App(){
 
   return(
     <>
+      <MenuSlide></MenuSlide>
       <HashRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/inicio"/>}/>
