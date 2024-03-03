@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { Link as LinkR} from "react-router-dom";
 import { getAllArquitectos } from "../api/arquitectos.api";
 import { getStudio } from "../api/estudio.api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,7 +41,7 @@ export function MenuSlide(){
             <div>
                 <img src={logo} alt="logo" className="logo-sl"></img>
                 <ul className="links-slide">
-                    <li><Link onClick={cerrarMenu} to={'destacados'} spy={true} smooth={true} offset={-170} duration={500}>Inicio</Link></li>
+                    <li><a onClick={cerrarMenu} href="/">Inicio</a></li>
                     <li><Link onClick={cerrarMenu} to={'destacados'} spy={true} smooth={true} offset={-170} duration={500}>Destacados</Link></li>
                     <li><Link onClick={cerrarMenu} to={'proyectos'} spy={true} smooth={true} offset={-170} duration={500}>Proyectos</Link></li>
                 </ul>
