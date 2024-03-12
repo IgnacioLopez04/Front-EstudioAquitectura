@@ -1,2 +1,2 @@
 # Front-EstudioAquitectura
-Todo lo que se encuentra aca es sobre el frontend de la pagina del estudio de arquitectura.
+A través de React realice todo el frontend de la página del estudio de arquitectura. Utilizando APIs comunico con el backend, donde puedo recibir la información necesaria para realizar las operaciondes del CRUD.
